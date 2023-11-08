@@ -27,6 +27,10 @@ const routes: Routes = [
         component: MyCartComponent //bu root için hangi component yüklenecek
       }
     ]
+  },
+  {
+    path:'',
+    loadChildren: () => import('./modules/status/status.module').then(t => t.StatusModule)
   }
   
 ];

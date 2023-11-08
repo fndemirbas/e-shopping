@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
 @Component({
@@ -23,12 +24,8 @@ export class ProductListComponent implements OnInit {
   }
 
   getProducts(categoryId:any) {
-    if(categoryId){
-      this.productService.getProductsByProductId(categoryId).subscribe( data=>{this.products=data;});
-    }
-    else{
-      this.productService.getProducts().subscribe( data=>{this.products=data;});
-    }
+    var req = categoryId ? this.productService.getProductsByProductId(categoryId) : this.productService.getProducts();
+    req.subscribe( data=>{this.products=data;});
   }
 
   addToCart(product:Product){

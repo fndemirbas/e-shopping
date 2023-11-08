@@ -24,9 +24,8 @@ export class ProductService {
     return this.httpClient.get<Product[]>(`${environment.baseApiUrl}/products`).pipe(tap(data=>console.log(data)));
   }
   
-  getProductsByProductId(categoryId:number): Observable<Product[]>{
+  getProductsByProductId(categoryId:any){
     return this.httpClient.get<Product[]>(`${environment.baseApiUrl}/products?categoryId=${categoryId}`);
-
   }
 
 }
