@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { CategoryService } from 'src/app/services/category.service';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -10,7 +11,8 @@ import { CategoryService } from 'src/app/services/category.service';
     CategoryListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports:[
     CategoryListComponent

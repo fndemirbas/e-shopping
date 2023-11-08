@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
 @Component({
@@ -11,17 +12,23 @@ export class ProductListComponent implements OnInit {
 
   products:Product[] =[];
 
-  constructor(private productService:ProductService){
-    this.productService
+  constructor(private productService:ProductService, private route:ActivatedRoute){
   }
 
   ngOnInit(): void {
-    console.log('Prodoct list yüklendi.', this.productService.getTime());
-    this.getProducts();
+    this.route.params.subscribe(params=>{
+      let categoryId = params['categoryId'];
+      this.getProducts(categoryId);
+    })
   }
 
-  getProducts() {
-    this.productService.getProducts().subscribe( data=>{this.products=data;});
+  getProducts(categoryId:any) {
+    if(categoryId){
+      this.productService.getProductsByProductId(categoryId).subscribe( data=>{this.products=data;});
+    }
+    else{
+      this.productService.getProducts().subscribe( data=>{this.products=data;});
+    }
   }
 
   addToCart(product:Product){

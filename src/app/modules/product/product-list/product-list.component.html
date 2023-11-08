@@ -6,6 +6,6 @@
             <button class="btn btn-sm btn-outline-info" (click)="addToCart(product)"> Sepete Ekle </button>
           </div>
           <p class="mb-1">{{product.price | currency : 'TRY' : '₺' : '1.2-3' }}</p>
-          <small class="text-muted">{{product.description | titlecase | textSlice:6}}</small>
+          <small class="text-muted">{{product.description | titlecase | textSlice:10}}</small>
         </li>
       </ul>

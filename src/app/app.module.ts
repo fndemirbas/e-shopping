@@ -10,11 +10,13 @@ import { CategoryService } from './services/category.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { MyCartComponent } from './modules/cart/my-cart/my-cart.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
+    MainLayoutComponent,
   ],
   imports: [
     BrowserModule,
