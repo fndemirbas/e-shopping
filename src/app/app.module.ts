@@ -8,6 +8,8 @@ import { CategoryModule } from './modules/category/category.module';
 import { ProductModule } from './modules/product/product.module';
 import { CategoryService } from './services/category.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { MyCartComponent } from './modules/cart/my-cart/my-cart.component';
 
 @NgModule({
   declarations: [
