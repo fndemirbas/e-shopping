@@ -1,7 +1,8 @@
 export interface Product{
     id:number;
     name:string;
-    unitPrice:number;
+    price:number;
     description:string;
     categoryId:number;
+    imageUrl:string;
 }

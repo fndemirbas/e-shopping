@@ -5,7 +5,7 @@
             <h5 class="mb-1">{{product.name}}</h5>
             <button class="btn btn-sm btn-outline-info" (click)="addToCart(product)"> Sepete Ekle </button>
           </div>
-          <p class="mb-1">{{product.unitPrice | currency : 'TRY' : '₺' : '1.2-3' }}</p>
+          <p class="mb-1">{{product.price | currency : 'TRY' : '₺' : '1.2-3' }}</p>
           <small class="text-muted">{{product.description | titlecase | textSlice:6}}</small>
         </li>
       </ul>

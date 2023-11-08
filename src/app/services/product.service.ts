@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, delay, tap } from 'rxjs';
 import { Product } from '../models/product';
+import { environment } from 'src/environments/environment';
 
 @Injectable(
   {
+    //kök modülde(app.module.ts) belirtmişssin gibi
     providedIn: 'root'
   }
 )
@@ -19,6 +21,7 @@ export class ProductService {
   }
 
   getProducts(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>("http://localhost:3000/products").pipe(tap(data=>console.log(data)));
+    return this.httpClient.get<Product[]>(`${environment.baseApiUrl}/products`).pipe(tap(data=>console.log(data)));
   }
+  
 }

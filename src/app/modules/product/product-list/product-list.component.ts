@@ -21,10 +21,7 @@ export class ProductListComponent implements OnInit {
   }
 
   getProducts() {
-    this.productService.getProducts().subscribe( data=>{
-      this.products=data;
-    }
-    );
+    this.productService.getProducts().subscribe( data=>{this.products=data;});
   }
 
   addToCart(product:Product){
