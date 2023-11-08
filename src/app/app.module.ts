@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { CategoryModule } from './modules/category/category.module';
 import { ProductModule } from './modules/product/product.module';
+import { CategoryService } from './services/category.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,12 @@ import { ProductModule } from './modules/product/product.module';
     BrowserModule,
     CategoryModule,
     ProductModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    /*CategoryService*/
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
