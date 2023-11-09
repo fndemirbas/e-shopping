@@ -34,17 +34,21 @@ export class ProductSaveComponent implements OnInit {
     });
   }
 
-  save(frm: NgForm){
+  save(){
 /*     console.log(frm);
     console.log('Form Verileri:',frm.value);
     if(frm.valid){
     } */
 
-    //subscribe olunmazsa veriye ulaşamayız!
-    this.productService.createProduct(frm.value).subscribe( _ => {
+
+    let obsProduct = this.model.id ? this.productService.updateProduct(this.model) : this.productService.createProduct(this.model);
+
+    obsProduct.subscribe(_=>{this.router.navigateByUrl('/admin/product')})
+/*     //subscribe olunmazsa veriye ulaşamayız!
+    this.productService.createProduct(this.model).subscribe( _ => {
       //yönlendirme --> ts içinde router link kullanımı gibi düşünebilirsin
       this.router.navigateByUrl("/admin");
-    })
+    }) */
 
   }
 

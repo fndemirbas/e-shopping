@@ -22,5 +22,13 @@ export class ProductComponent{
     this.productService.getProducts().subscribe(data=>{this.products=data});
   }
 
+  
+  remove(productId : number){
+    if(confirm("Bu ürünü silmek istediğinize emin misiniz?")){
+      this.productService.deleteProduct(productId).subscribe(_=>{
+        this.getProducts();
+       })
+    }
+  }
 
 }

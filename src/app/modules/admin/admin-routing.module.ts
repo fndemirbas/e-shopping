@@ -24,6 +24,10 @@ const routes: Routes = [
       {
         path:'product-save/:id',
         component:ProductSaveComponent
+      },
+      {
+        path:'product-delete/:id',
+        component:ProductSaveComponent
       }
     ]
   }

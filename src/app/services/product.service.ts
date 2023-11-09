@@ -30,7 +30,7 @@ export class ProductService {
 
   
   getProduct(productId:number): Observable<Product> {
-    return this.httpClient.get<Product>(`${environment.baseApiUrl}/products${productId}`);
+    return this.httpClient.get<Product>(`${environment.baseApiUrl}/products/${productId}`);
   }
 
   createProduct(product:Product): Observable<any>{

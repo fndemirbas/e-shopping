@@ -20,8 +20,8 @@
                         <td>{{product.price | currency}}</td>
                         <td>{{product.description}}</td>
                         <td>
-                            <a class="btn btn-primary" [routerLink]="['product-save',product.id]" role="button">Güncelle</a>
-                            <button type="button" class="btn btn-danger ms-2">Sil</button>
+                            <a class="btn btn-primary" [routerLink]="['/admin','product-save',product.id]" role="button">Güncelle</a>
+                            <button (click)="remove(product.id!)" type="button" class="btn btn-danger ms-2">Sil</button>
                         </td>
                     </tr>
                 </tbody>
