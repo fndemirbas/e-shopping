@@ -20,6 +20,10 @@ const routes: Routes = [
       {
         path:'product-save',
         component:ProductSaveComponent
+      },
+      {
+        path:'product-save/:id',
+        component:ProductSaveComponent
       }
     ]
   }

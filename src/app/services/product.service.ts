@@ -28,4 +28,20 @@ export class ProductService {
     return this.httpClient.get<Product[]>(`${environment.baseApiUrl}/products?categoryId=${categoryId}`);
   }
 
+  
+  getProduct(productId:number): Observable<Product> {
+    return this.httpClient.get<Product>(`${environment.baseApiUrl}/products${productId}`);
+  }
+
+  createProduct(product:Product): Observable<any>{
+    return this.httpClient.post<any>(`${environment.baseApiUrl}/products`, product);
+  }
+
+  updateProduct(product:Product): Observable<any>{
+    return this.httpClient.put<any>(`${environment.baseApiUrl}/products/${product.id}`, product);
+  }
+
+  deleteProduct(productId:number): Observable<any>{
+    return this.httpClient.delete<any>(`${environment.baseApiUrl}/products/${productId}`);
+  }
 }

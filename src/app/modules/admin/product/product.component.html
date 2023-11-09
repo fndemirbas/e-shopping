@@ -19,6 +19,10 @@
                         <td scope="row">{{product.name}}</td>
                         <td>{{product.price | currency}}</td>
                         <td>{{product.description}}</td>
+                        <td>
+                            <a class="btn btn-primary" [routerLink]="['product-save',product.id]" role="button">Güncelle</a>
+                            <button type="button" class="btn btn-danger ms-2">Sil</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

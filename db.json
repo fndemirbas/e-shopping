@@ -111,6 +111,41 @@
       "imageUrl": "https://dummyimage.com/100x100/ff1717/ffff05.png",
       "description": "IPhone X ",
       "id": 14
+    },
+    {
+      "name": "Çilek",
+      "categoryId": "1",
+      "price": 30,
+      "decription": "Kıpkırmızı çilek",
+      "id": 15
+    },
+    {
+      "name": "Çilek",
+      "categoryId": "1",
+      "price": 100,
+      "decription": "Kırmızı çilek",
+      "id": 16
+    },
+    {
+      "name": "Karpuz",
+      "categoryId": "1",
+      "price": 20,
+      "decription": "Sulu sulu karpuz",
+      "id": 17
+    },
+    {
+      "name": "Çilek",
+      "categoryId": "1",
+      "price": 100,
+      "decription": "aaaaaaaaaaaaaaa",
+      "id": 18
+    },
+    {
+      "name": "Elma",
+      "categoryId": "1",
+      "price": 100,
+      "decription": "Sulu sulu elmaa",
+      "id": 19
     }
   ],
   "categories": [
