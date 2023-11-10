@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MyCartComponent } from './modules/cart/my-cart/my-cart.component';
 import { ProductListComponent } from './modules/product/product-list/product-list.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -30,6 +31,7 @@ const routes: Routes = [
   },
   {
     path:'admin',
+    canActivate: [authGuard],
     loadChildren: () => import('./modules/admin/admin.module').then(t => t.AdminModule)
   }
   ,
