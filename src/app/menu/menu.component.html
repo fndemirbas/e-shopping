@@ -13,9 +13,15 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/products">Ürünlerimiz</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/admin">Admin Page</a>
+        <li class="nav-item" *ngIf="user; else elseBlock">
+          <a class="nav-link" routerLink="/admin">Admin ({{user.fullName}})</a>
         </li>
+        <ng-template #elseBlock>
+          <a class="nav-link" routerLink="/account/login">Login</a>
+        </ng-template>
+<!--         <li class="nav-item" *ngIf="!user">
+          <a class="nav-link" routerLink="/account/login">Login</a>
+        </li> -->
       </ul>
       <form class="d-flex my-2 my-lg-0">
         <input class="form-control me-sm-2" type="text" placeholder="Search">
@@ -23,6 +29,7 @@
       </form>
       <span class="navbar-text ms-2">
         <a routerLink="/my-cart">Sepetim</a>
+        <button *ngIf="user" type="button" (click)="logout()" class="btn btn-sm btn-warning ms-2">Çıkış</button>
       </span>
     </div>
   </div>

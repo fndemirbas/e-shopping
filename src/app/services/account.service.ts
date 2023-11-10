@@ -19,6 +19,11 @@ export class AccountService {
       tap(data => localStorage.setItem('token', data?.token!)));//token localStorage'a kaydediliyor 
   }
 
+  
+  logout(){
+    localStorage.removeItem('token');
+  }
+
   //
   getActiveUser(): User | null {
     //localStroga'dan token bilgisi alınıyor
