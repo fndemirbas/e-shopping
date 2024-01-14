@@ -20,7 +20,7 @@ export class CategoryService {
   }
 
   getCategories(): Observable<Category[]> {
-    return this.httpClient.get<Category[]>(`${environment.baseApiUrl}/categories`).pipe(tap(data=>console.log(data)));
+    return this.httpClient.get<Category[]>(`http://localhost:9090/category/`).pipe(tap(data=>console.log(data)));
 
   }
 }

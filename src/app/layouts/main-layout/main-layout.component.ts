@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class MainLayoutComponent {
 
+  menuSearch(exp: string) {
+    alert(`${exp} ifadesi arandı`)
+  }
+
 }

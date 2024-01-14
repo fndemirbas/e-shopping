@@ -42,6 +42,14 @@ export class ProductService {
   }
 
   deleteProduct(productId:number): Observable<any>{
+    //interception kullanmadan
+/*     return this.httpClient.delete<any>(`${environment.baseApiUrl}/products/${productId}`, {
+      headers:{
+        'Authorization':`Bearer ${localStorage.getItem('token')}`
+      }
+    }); */
+
     return this.httpClient.delete<any>(`${environment.baseApiUrl}/products/${productId}`);
+
   }
 }

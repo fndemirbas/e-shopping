@@ -7,10 +7,12 @@ import { MenuComponent } from './menu/menu.component';
 import { CategoryModule } from './modules/category/category.module';
 import { ProductModule } from './modules/product/product.module';
 import { CategoryService } from './services/category.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { MyCartComponent } from './modules/cart/my-cart/my-cart.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,10 +25,16 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
     CategoryModule,
     ProductModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     /*CategoryService*/
+    {
+      provide:HTTP_INTERCEPTORS, 
+      useClass:JwtInterceptor,
+      multi: true //birden fazla inceptor olabilir
+    }
   ],
   bootstrap: [AppComponent]
 })

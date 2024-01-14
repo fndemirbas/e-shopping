@@ -19,6 +19,10 @@ export class AccountService {
       tap(data => localStorage.setItem('token', data?.token!)));//token localStorage'a kaydediliyor 
   }
 
+
+  public get accessToken(): string|null{
+    return localStorage.getItem('token');
+  }
   
   logout(){
     localStorage.removeItem('token');
