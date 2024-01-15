@@ -81,7 +81,7 @@
       "id": 10
     },
     {
-      "categoryId": "6",
+      "categoryId": "5",
       "name": "Citroen",
       "price": 65000,
       "imageUrl": "https://dummyimage.com/100x100/ffe419/ff0505.png&text=Citroen",
@@ -89,7 +89,7 @@
       "id": 11
     },
     {
-      "categoryId": "5",
+      "categoryId": "6",
       "name": "Test",
       "price": 50,
       "imageUrl": "https://dummyimage.com/100x100/ff1717/ffff05.png",
@@ -98,7 +98,7 @@
     },
     {
       "name": "Test 2",
-      "categoryId": "5",
+      "categoryId": "6",
       "price": 60,
       "imageUrl": "https://dummyimage.com/100x100/ff1717/ffff05.png",
       "description": "test açıklama",

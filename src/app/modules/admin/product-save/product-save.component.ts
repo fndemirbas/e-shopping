@@ -41,7 +41,7 @@ export class ProductSaveComponent implements OnInit {
     } */
 
 
-    let obsProduct = this.model.id ? this.productService.updateProduct(this.model) : this.productService.createProduct(this.model);
+    let obsProduct = this.model.productId ? this.productService.updateProduct(this.model) : this.productService.createProduct(this.model);
 
     obsProduct.subscribe(_=>{this.router.navigateByUrl('/admin/product')})
 /*     //subscribe olunmazsa veriye ulaşamayız!

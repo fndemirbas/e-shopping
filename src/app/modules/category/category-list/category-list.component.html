@@ -6,7 +6,7 @@
       </div> -->
       <div class="list-group">
         <a *ngFor="let category of categories" 
-        [routerLink]="['products', category.id]"
+        [routerLink]="['products', category.categoryId]"
         routerLinkActive="active"
-        class="list-group-item list-group-item-action ">{{category.name}}</a>
+        class="list-group-item list-group-item-action ">{{category.categoryName}}</a>
       </div>

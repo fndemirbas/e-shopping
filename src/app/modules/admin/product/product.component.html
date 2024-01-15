@@ -16,12 +16,12 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let product of products" class="">
-                        <td scope="row">{{product.name}}</td>
+                        <td scope="row">{{product.productName}}</td>
                         <td>{{product.price | currency}}</td>
                         <td>{{product.description}}</td>
                         <td>
-                            <a class="btn btn-primary" [routerLink]="['/admin','product-save',product.id]" role="button">Güncelle</a>
-                            <button (click)="remove(product.id!)" type="button" class="btn btn-danger ms-2">Sil</button>
+                            <a class="btn btn-primary" [routerLink]="['/admin','product-save',product.productId]" role="button">Güncelle</a>
+                            <button (click)="remove(product.productId!)" type="button" class="btn btn-danger ms-2">Sil</button>
                         </td>
                     </tr>
                 </tbody>

@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, delay, tap } from 'rxjs';
+import { Observable, delay, map, tap } from 'rxjs';
 import { Product } from '../models/product';
 import { environment } from 'src/environments/environment';
+import { ProductResponse } from '../models/productResponse';
 
 @Injectable(
   {
@@ -21,11 +22,25 @@ export class ProductService {
   }
 
   getProducts(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(`${environment.baseApiUrl}/products`).pipe(tap(data=>console.log(data)));
+    return this.httpClient.get<ProductResponse>(`http://localhost:9788/api/1.0/product/TR/products`).pipe(map((myAnswers: ProductResponse) => {
+      const res: Product[]=[];
+      myAnswers.payload.forEach((item) => {
+        res.push(item);
+      });
+
+      return res;
+})); 
   }
   
   getProductsByProductId(categoryId:any){
-    return this.httpClient.get<Product[]>(`${environment.baseApiUrl}/products?categoryId=${categoryId}`);
+    return this.httpClient.get<ProductResponse>(`http://localhost:9788/api/1.0/product/TR/products/${categoryId}`).pipe(map((myAnswers: ProductResponse) => {
+      const res: Product[]=[];
+      myAnswers.payload.forEach((item) => {
+        res.push(item);
+      });
+
+      return res;
+})); 
   }
 
   
@@ -38,7 +53,7 @@ export class ProductService {
   }
 
   updateProduct(product:Product): Observable<any>{
-    return this.httpClient.put<any>(`${environment.baseApiUrl}/products/${product.id}`, product);
+    return this.httpClient.put<any>(`${environment.baseApiUrl}/products/${product.productId}`, product);
   }
 
   deleteProduct(productId:number): Observable<any>{

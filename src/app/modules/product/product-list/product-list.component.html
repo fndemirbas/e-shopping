@@ -2,10 +2,10 @@
       <ul class="list-group">
         <li *ngFor="let product of products" href="#" class="list-group-item list-group-item-action flex-column align-items-start" aria-current="true">
           <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">{{product.name}}</h5>
+            <h5 class="mb-1">{{product.productName}}</h5>
             <button class="btn btn-sm btn-outline-info" (click)="addToCart(product)"> Sepete Ekle </button>
           </div>
           <p class="mb-1">{{product.price | currency : 'TRY' : '₺' : '1.2-3' }}</p>
-          <small class="text-muted">{{product.description! | titlecase | textSlice:10}}</small>
+          <small class="text-muted">{{product.description! | titlecase | textSlice:200}}</small>
         </li>
       </ul>
